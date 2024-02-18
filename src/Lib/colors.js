@@ -27,7 +27,7 @@ module.exports = {
     "ui-green": "#008040",
     "ui-green-light": "#00ff00",
 
-    "ui-red": "#F33535",
+    "ui-red": "#FF004D",
     "ui-red-light": "#ff4d4d",
     "ui-neon-yellow": "#FFE600",
     "ui-neon-blue": "#3300ff",
@@ -63,5 +63,14 @@ module.exports = {
 
     "ui-yellow-400": "#facc15",
     "ui-yellow-500": "#eab308",
+
+
+    "ui-primary":"#FC6736",
+    "ui-primary-dark":"#FF5722",
+    "ui-secondary":"#0C2D57",
+    "ui-tertiary":"#FFB0B0",
+    "ui-quaternary":"#EFECEC",
+
   },
 };
+

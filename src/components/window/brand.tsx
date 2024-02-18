@@ -3,7 +3,7 @@ import { Image_Url } from "@/utils/config";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { Spinner } from "../Layout/Atom/atom";
+import { Spinner, Title } from "../Layout/Atom/atom";
 
 const Brand = () => {
   const brandData = UseBrand();
@@ -32,24 +32,16 @@ const Brand = () => {
   } else {
     // Show user data table if data is available
     windowContent = (
-      <section className="mt-10 md:py-10 md:p-10 bg-gray-100">
-        <div className="container mx-auto">
-          <div className="flex justify-between">
-            <div className="text-left ml-2 relative mb-10">
-              <h4 className="text-2xl font-semibold text-gray-800 uppercase">
-                Brands
-              </h4>
-              <div
-                style={{ top: "1.5rem", transform: "translateY(50%)" }}
-                className="h-1 w-16 absolute bottom-0 left-0 mt-5 bg-ui-red"
-              ></div>
-            </div>
+      <section className="mt-10 md:py-10 md:p-10 ">
+        <div className="container mx-auto md:px-32">
+          <div className="text-left">
+            <Title title="Explore  Our Brands" />
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-4">
             {allbrandData?.brands?.map((brand, index) => (
               <div
                 key={index}
-                className="col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1 mt-1"
+                className="col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1 mt-1 shadow-md shadow-gray-200 border border-gray-50 rounded-xl"
               >
                 <Link
                   href={{
@@ -69,14 +61,19 @@ const Brand = () => {
                           objectFit: "contain",
                           height: "100px",
                           width: "auto",
+                          aspectRatio: "1/1",
+                          cursor: "pointer",
+                          margin: "auto",
+                          objectPosition: "center",
+                          borderRadius: "100%",
                         }}
                         src={Image_Url + brand.brandImage}
                         alt="Brand Logo"
-                        className="brand-image rounded-full mx-auto"
+                        className="brand-image p-4 rounded-full mx-auto object-contain h-full w-full bg-blend-color-burn"
                       />
                     </div>
                     <div className="text-center mt-3">
-                      <h3 className="text-lg font-semibold text-gray-800">
+                      <h3 className="text-sm  font-semibold text-gray-800">
                         {brand.brandName}
                       </h3>
                     </div>

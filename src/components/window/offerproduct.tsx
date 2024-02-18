@@ -1,7 +1,7 @@
 import { UseProduct } from "@/resources/resources";
 import Link from "next/link";
 import React from "react";
-import { Spinner } from "../Layout/Atom/atom";
+import { Spinner, Title } from "../Layout/Atom/atom";
 import ProductCard from "../Layout/product/productcard";
 
 export const OfferProducts = () => {
@@ -41,20 +41,14 @@ export const OfferProducts = () => {
     // Show the user data table if data is available
     windowContent = (
       <div className="container mx-auto">
-        <div className="md:mt-10 mb-10 pt-10">
+        <div className="md:mt-10 mb-10 pt-10 md:px-32">
           <div className="flex justify-between">
             <div className="text-left ml-2 relative mb-10">
-              <h4 className="text-2xl font-semibold text-gray-800 uppercase">
-                Product on offer
-              </h4>
-              <div
-                style={{ top: "1.5rem", transform: "translateY(50%)" }}
-                className="h-1 w-16 absolute bottom-0 left-0 mt-5 bg-ui-red"
-              ></div>
+           <Title title="Today's Offer"/>
             </div>
             <div className="text-right">
               <Link href="product">
-                <h4 className="text-lg mt-3 font-semibold text-blue-600 hover:text-blue-800">
+                <h4 className="text-sm mt-3 font-semibold text-ui-primary underline uppercase  cursor-pointer hover:scale-105 transition ease-out duration-300">
                   See More
                 </h4>
               </Link>

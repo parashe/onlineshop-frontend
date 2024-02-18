@@ -132,7 +132,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white border-gray-200 dark:border-gray-600 dark:bg-gray-900 shadow-md fixed top-0 left-0 z-50 w-full ">
-      <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-2">
+      <div className="flex flex-wrap  justify-center gap-4 items-center  container mx-auto max-w-screen-xl p-2">
         <Link href="/" className="flex items-center">
           <Image
             style={{ width: 100, height: 60 }}
@@ -178,13 +178,13 @@ const Navbar = () => {
             showNavList ? "block" : "hidden"
           } items-center justify-between font-medium w-full md:flex md:w-auto md:order-1`}
         >
-          <ul className="flex flex-col p-4 md:p-0 mt-4 border  border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <ul className="flex flex-col uppercase text-xs p-4 md:p-0 mt-4 border  border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
               <button
                 onClick={handleShowCategory}
                 id="mega-menu-full-dropdown-button"
                 data-collapse-toggle="mega-menu-full-dropdown"
-                className="flex items-center  justify-between w-full py-2 pl-3 pr-4  text-gray-900 rounded md:w-auto hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-ui-red md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
+                className="flex items-center uppercase justify-between w-full py-2 pl-3 pr-4  text-gray-900 rounded md:w-auto hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-ui-red md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 All Category{" "}
                 <svg
@@ -257,7 +257,7 @@ const Navbar = () => {
             <li>
               <button
                 onClick={() => setisSearchModalVisible(true)}
-                className="block py-2 pl-3 mt-2 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-ui-red md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
+                className="block py-2 pl-3 hover:scale-150 transition ease-out duration-300 mt-0 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-ui-red md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 <SearchButton fg="red" />
               </button>
@@ -277,7 +277,7 @@ const Navbar = () => {
                 <li>
                   <a
                     href="#"
-                    className="block py-2 pl-3 pr-4 text-ui-red rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-ui-red md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
+                    className="block py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-ui-red md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
                     onClick={() => setLoginModalVisible(true)}
                   >
                     Login
@@ -286,7 +286,7 @@ const Navbar = () => {
                 <li>
                   <a
                     href="#"
-                    className="block py-2 pl-3 pr-4 text-ui-red rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-ui-red md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
+                    className="block py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-ui-red md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
                     onClick={() => setSingupModalVisible(true)}
                   >
                     Sign Up
@@ -356,16 +356,16 @@ const CategoryList = ({
       categoriesMap[category._id] = { ...category, categories: [] };
 
       if (
-        category.parentCategory === undefined ||
-        category.parentCategory === null
+        category?.parentCategory === undefined ||
+        category?.parentCategory === null
       ) {
         rootCategories.push(categoriesMap[category._id]);
       } else {
         const parent = categoriesMap[category.parentCategory];
-        if (parent.categories === null) {
+        if (parent?.categories === null) {
           parent.categories = [];
         }
-        parent.categories.push(categoriesMap[category._id]);
+        parent?.categories.push(categoriesMap[category._id]);
         categoriesMap[category._id] = parent;
       }
     });
@@ -388,14 +388,14 @@ const CategoryList = ({
           }}
           className="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
         >
-          <div className="font-semibold">{category.categoryName}</div>
+          <div className="font-md">{category.categoryName}</div>
         </Link>
         {category.categories && (
           <ul>
             <li>
               {" "}
               {/* Wrap each subcategory in an <li> element */}
-              <a className="text-sm text-gray-500 dark:text-gray-400">
+              <a className="text-xs font-medium text-gray-900 dark:text-gray-400">
                 {renderCategories(category.categories)}
               </a>
             </li>

@@ -666,3 +666,22 @@ export const SelectWithArrow: React.FC<SelectWithArrowProps> = ({
     </div>
   );
 };
+
+interface TitleProps {
+  title: string;
+}
+
+export const Title: React.FC<TitleProps> = ({ title }) => (
+  <div className="items-center mb-16 ">
+    {/* Horizontal line at the start of the title */}
+    
+
+    {/* Title text */}
+    <h4 className="text-xl md:text-xl text-gray-800 uppercase font-black">
+      {title}
+    </h4>
+
+    {/* Horizontal line at the end of the title */}
+    <div className="w-8 mt-3 ml-4 border-t-4 border-ui-primary"></div>
+  </div>
+);
