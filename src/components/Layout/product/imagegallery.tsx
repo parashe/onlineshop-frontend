@@ -43,12 +43,12 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
           >
             {/* Displaying the thumbnail image */}
             <Image
-              style={{ objectFit: "fill", cursor: "pointer", height: 90 }}
+              style={{ objectFit: "fill", cursor: "pointer", height: 80 }}
               width={100}
               height={100}
               src={Image_Url + image}
               alt="product"
-              className="mt-2"
+              className="mt-2 aspect-auto"
             />
           </div>
         ))}
@@ -61,7 +61,7 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
           <div className="modal-content">
             {/* Displaying the selected image in a larger view */}
             <Image
-              style={{ objectFit: "fill", cursor: "pointer", height: 500 }}
+              style={{ objectFit: "fill", cursor: "pointer", height: 450 }}
               width={500}
               height={500}
               src={getImageUrl(selectedImage)}

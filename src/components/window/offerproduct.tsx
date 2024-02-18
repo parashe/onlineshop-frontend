@@ -25,7 +25,7 @@ export const OfferProducts = () => {
     // Show a spinner if data is still loading
     windowContent = (
       <div className="fixed top-0 left-0 w-screen h-screen flex justify-center items-center  bg-opacity-40 z-[100]">
-        <Spinner size={16} color="text-light-200" />
+        <Spinner size={24} color="text-light-200" />
       </div>
     );
   } else if (productData.error || !allproductData) {
@@ -41,23 +41,23 @@ export const OfferProducts = () => {
     // Show the user data table if data is available
     windowContent = (
       <div className="container mx-auto">
-        <div className="md:mt-10 mb-10 pt-10 md:px-32">
-          <div className="flex justify-between">
-            <div className="text-left ml-2 relative mb-10">
+        <div className="md:mt-10 mb-10 pt-10 md:px-20 xl:px-32 ">
+          <div className="flex justify-between px-2">
+            <div className="text-left ml-2 relative ">
            <Title title="Today's Offer"/>
             </div>
             <div className="text-right">
               <Link href="product">
-                <h4 className="text-sm mt-3 font-semibold text-ui-primary underline uppercase  cursor-pointer hover:scale-105 transition ease-out duration-300">
+                <h4 className="text-sm  mt-3 font-semibold text-ui-primary underline uppercase  cursor-pointer hover:scale-105 transition ease-out duration-300">
                   See More
                 </h4>
               </Link>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:mt-5 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-5 gap-2">
+          <div className="grid p-5 grid-cols-1 md:mt-5 sm:grid-cols-2  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
             {filterDiscountProduct &&
               filterDiscountProduct
-                .slice(0, 10)
+                .slice(0, 12)
                 .map((product: any, index: number) => (
                   <Link
                     href={{

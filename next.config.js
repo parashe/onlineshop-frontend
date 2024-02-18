@@ -21,7 +21,7 @@ module.exports = {
   // },
   
     images: {
-      domains: ['puce-determined-cockatoo.cyclic.app'],
+      domains: ['puce-determined-cockatoo.cyclic.app', 'localhost'],
     },
 
 };

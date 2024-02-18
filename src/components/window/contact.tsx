@@ -6,6 +6,7 @@ import {
   Input,
   Spinner,
   TextAreaInput,
+  Title,
 } from "../Layout/Atom/atom";
 
 import MapWindow from "./map";
@@ -137,19 +138,15 @@ export const Contact = () => {
 
   return (
     <>
-      <section className="mt-10 mb-5 ">
+      <section className="mt-10 mb-5  ">
         <div className="container mx-auto mt-10 ">
-          <div className=" mt-10 py-10 bg-white border-2 p-10">
-            <div className="text-left ml-2 relative mb-10">
-              <h4 className="text-2xl font-semibold text-gray-800">
-                Contact Us
-              </h4>
-              <div
-                style={{ top: "1.5rem", transform: "translateY(50%)" }}
-                className="h-1 w-16 absolute bottom-0 left-0 mt-5 bg-ui-red"
-              ></div>
+          <div className="md:mt-10 mb-10 pt-10 md:20px md:px-20 xl:px-32 ">
+            <div className="text-left ml-2 relative ">
+            <h3 className="mx-auto lg:mx-0 uppercase text-ui-primary-dark lg:mb-5 text-md text-justify font-black">
+               Contact Us
+              </h3>
             </div>
-            <div className="py-10">
+            <div className="py-10 ">
               <form onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="form-group">
@@ -233,7 +230,7 @@ export const Contact = () => {
 
                 <div className="flex justify-end mt-5">
                   {/* Button for form submission */}
-                  <Button className="px-10 py-3 rounded-sm bg-ui-blue text-white text-md space-x-0">
+                  <Button className="px-8 py-2 rounded-sm bg-ui-primary text-white text-md space-x-0">
                     {isSaving ? (
                       <div className="flex justify-center">
                         {/* Show a spinner during saving process */}
@@ -258,11 +255,13 @@ export const Contact = () => {
                 </div>
               </form>
             </div>
+            <MapWindow />
           </div>
+         
         </div>
       </section>
 
-      <MapWindow />
+     
     </>
   );
 };

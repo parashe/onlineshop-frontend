@@ -5,39 +5,29 @@ export const About = () => {
   return (
     <>
       <section className="mb-10 mt-10 ">
-        <div className="container mx-auto bg-white p-10">
-          <div className="text-left ml-2 relative mb-10">
-            <h4 className="text-2xl font-semibold text-gray-800">About</h4>
-            <div
-              style={{ top: "1.5rem", transform: "translateY(50%)" }}
-              className="h-1 w-16 absolute bottom-0 left-0 mt-5 bg-ui-red"
-            ></div>
-          </div>
+        <div className="container mx-auto">
+        <div className="md:mt-10 mb-10 pt-10 md:20px md:px-20 xl:px-32 ">
+        
           <div>
-            <h2 className="text-4xl font-bold text-center lg:text-center text-ui-red">
+            <h2 className="text-4xl font-black text-center lg:text-center text-ui-primary-dark">
               We are amazing....
             </h2>
           </div>
           <div className="about flex flex-col items-center lg:flex-row lg:items-start lg:space-x-8 mt-8">
             <div className="lg:w-1/2">
               <Image
+              priority
                 width={500}
                 height={500}
                 quality={100}
-                style={{
-                  objectFit: "cover",
-                  cursor: "pointer",
-                  borderRadius: "50%",
-                  height: "100%",
-                  width: "100%",
-                }}
+                
                 src="/images/about.jpg"
                 alt="MyPic"
-                className="max-w-full mt-6 rounded-sm shadow-lg "
+                className="max-w-full mt-6 h-full rounded-sm shadow-lg  aspect-[16/9] cursor-pointer hover:scale-105 hover:border-blue-500 transition duration-300"
               />
             </div>
-            <div className="lg:w-1/2 mt-8 lg:mt-0">
-              <p className="text-lg text-gray-700 leading-relaxed mt-4">
+            <div className="lg:w-1/2 mt-8 lg:mt-0 text-justify">
+              <p className="text-xs text-gray-700 leading-relaxed mt-4">
                 We are dedicated to providing you with a seamless online
                 shopping experience. Our app is designed to make your shopping
                 journey effortless and enjoyable. With a wide range of products
@@ -47,7 +37,7 @@ export const About = () => {
                 extensive selection of products to cater to diverse tastes and
                 preferences.
               </p>
-              <p className="text-lg text-gray-700 leading-relaxed mt-4">
+              <p className="text-xs text-gray-700 leading-relaxed mt-4">
                 At our Ecommerce App, we prioritize user experience. Our
                 user-friendly interface allows you to navigate through the app
                 with ease. Finding your desired products is a breeze, thanks to
@@ -58,24 +48,14 @@ export const About = () => {
                 that your browsing and shopping experience is seamless and
                 enjoyable.
               </p>
-              <p className="text-lg text-gray-700 leading-relaxed mt-4">
-                Security and convenience are paramount to us. We offer a secure
-                payment gateway, ensuring that your financial information is
-                protected. You can choose from a range of payment options,
-                including credit/debit cards, mobile wallets, and online
-                banking, providing you with the flexibility to shop according to
-                your preference. Our app is designed to streamline the checkout
-                process, saving you time and effort. With our convenient payment
-                options, you can shop confidently, knowing that your
-                transactions are secure.
-              </p>
+              
             </div>
           </div>
           <div className="mt-12">
-            <h2 className="text-3xl font-bold text-center lg:text-ceneter text-ui-red md:p-10 ">
+            <h2 className="text-3xl  text-center font-black lg:text-ceneter text-ui-primary-dark md:p-10 ">
               More Information You Should Know
             </h2>
-            <ul className="list-disc ml-6 mt-4 text-lg text-gray-700 leading-relaxed">
+            <ul className="list-disc ml-6 mt-4 text-justify text-xs text-gray-700 leading-relaxed">
               <li className="mt-2">
                 Fast and Reliable Delivery: We understand that prompt delivery
                 is essential when shopping online. That is why we partner with
@@ -113,6 +93,7 @@ export const About = () => {
                 finds and recommendations to your friends and followers.
               </li>
             </ul>
+          </div>
           </div>
         </div>
       </section>

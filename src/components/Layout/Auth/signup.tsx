@@ -159,7 +159,7 @@ const SignUp = ({ onClose }: UserModalDetailsProps) => {
   // Return the JSX representing the SignUp form
   return (
     <div className="relative bg-white rounded-lg shadow dark:bg-gray-700 w-[900px]">
-      <div className="flex items-start justify-between bg-gray-100 p-4 border-b rounded-t dark:border-gray-600">
+      <div className="flex items-center justify-between bg-gray-100 p-4 border-b rounded-t dark:border-gray-600">
         <h3 className="px-10 text-xl font-semibold text-gray-900 dark:text-white">
           Sign Up
         </h3>
@@ -187,7 +187,7 @@ const SignUp = ({ onClose }: UserModalDetailsProps) => {
         </button>
       </div>
 
-      <div className="container mx-auto p-12 pt-8 w-full pb-10 bg-gray-100">
+      <div className="container mx-auto p-12 pt-8 w-full pb-10 ">
         <div className="max-w-[1000px] p-6 bg-white pb-10">
           <form
             className="space-y-4 md:space-y-6"
@@ -259,6 +259,17 @@ const SignUp = ({ onClose }: UserModalDetailsProps) => {
                   errorMessage={phone_ErrorMsg}
                 />
               </div>
+              <div className="w-full">
+              <Input
+                  value={fullName}
+                  onChange={(e) => handleChangeFullName(e.target.value)}
+                  autoComplete="off"
+                  type="text"
+                  label="Address"
+                  placeholder="Enter full address"
+                  errorMessage={fullName_ErrorMsg}
+                />
+            </div>
             </div>
             <div className="flex justify-end mt-5">
               {/* Button for form submission */}
@@ -266,7 +277,7 @@ const SignUp = ({ onClose }: UserModalDetailsProps) => {
                 onClick={() => {
                   handleUserSave();
                 }}
-                className="px-10 py-3 rounded-sm bg-ui-blue text-white text-md space-x-0"
+                className="px-8 py-2 rounded-sm bg-ui-primary hover:bg-orange-600 text-white text-md space-x-0"
               >
                 {isSaving ? (
                   <div className="flex justify-center">

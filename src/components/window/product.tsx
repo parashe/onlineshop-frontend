@@ -1,7 +1,7 @@
 import { UseProduct } from "@/resources/resources";
 import Link from "next/link";
 import React from "react";
-import { Spinner } from "../Layout/Atom/atom";
+import { Spinner, Title } from "../Layout/Atom/atom";
 import ProductCard from "../Layout/product/productcard";
 
 export const Products = () => {
@@ -28,7 +28,7 @@ export const Products = () => {
     // Show a spinner if data is still loading
     windowContent = (
       <div className="fixed top-0 left-0 w-screen h-screen flex justify-center items-center  bg-opacity-40 z-[100]">
-        <Spinner size={16} color="text-light-200" />
+        <Spinner size={24} color="text-light-200" />
       </div>
     );
   } else if (productData.error || !allproductData) {
@@ -44,29 +44,25 @@ export const Products = () => {
     // Show the user data table if data is available
     windowContent = (
       <div className="container mx-auto">
-        <div className="md:mt-10 mb-10 pt-10">
-          <div className="flex justify-between">
-            <div className="text-left ml-2 relative mb-10">
-              <h4 className="text-2xl font-semibold text-gray-800 uppercase">
-                Featured Product
-              </h4>
-              <div
-                style={{ top: "1.5rem", transform: "translateY(50%)" }}
-                className="h-1 w-16 absolute bottom-0 left-0 mt-5 bg-ui-red"
-              ></div>
+        <div className="md:mt-10 mb-10 pt-10 md:20px md:px-20 xl:px-32 ">
+          <div className="flex justify-between px-2">
+            <div className="text-left ml-2 relative ">
+              <div className="text-left ml-2 relative ">
+                <Title title="Featured Products" />
+              </div>
             </div>
             <div className="text-right">
               <Link href="product">
-                <h4 className="text-lg mt-3 font-semibold text-blue-600 hover:text-blue-800">
+                <h4 className="text-sm mt-3 font-semibold text-ui-primary underline uppercase  cursor-pointer hover:scale-105 transition ease-out duration-300">
                   See More
                 </h4>
               </Link>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:mt-5 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-5 gap-2">
+          <div className="grid p-5 grid-cols-1 md:mt-5 sm:grid-cols-2  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
             {filterWithoutDiscountProduct &&
               filterWithoutDiscountProduct
-                .slice(-10)
+                .slice(-12)
                 .map((product: any, index: number) => (
                   <Link
                     href={{

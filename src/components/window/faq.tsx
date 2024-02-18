@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Title } from "../Layout/Atom/atom";
 
 const FAQSection: React.FC = () => {
   // State to track the open/closed state of each FAQ item
@@ -12,30 +13,28 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <section className="bg-gray-100  mt-10">
+    <section className="bg-white  mt-10">
       <div className="container mx-auto">
-        <div className="bg-white rounded-lg shadow-md p-8">
+      <div className="md:mt-10 mb-10 pt-10 md:20px md:px-20 xl:px-32 shadow-sm bg-white ">
           <div className="text-left ml-2 relative mb-10">
-            <h4 className="text-3xl font-semibold text-gray-800 mb-8">
-              Frequently Asked Questions
-            </h4>
-            <div
-              style={{ top: "1.5rem", transform: "translateY(50%)" }}
-              className="h-1 w-32 absolute bottom-0 left-0 mt-5 bg-ui-red hidden md:block"
-            ></div>
+            <div className="text-left ml-2 relative ">
+              <div className="text-left ml-2 relative ">
+                <Title title="Frequently Asked Questions" />
+              </div>
+            </div>
           </div>
           <div className="space-y-4">
             {FAQData.map((faq, index) => (
-              <div key={index} className="border-b border-gray-300">
+              <div key={index} className="border-b border-ui-primary">
                 <div
                   className="flex items-center justify-between cursor-pointer py-10"
                   onClick={() => toggleFAQ(index)}
                 >
-                  <h5 className="text-lg font-semibold text-gray-800">
+                  <h5 className="text-sm font-semibold text-gray-800">
                     {faq.question}
                   </h5>
                   <span
-                    className={`transition-transform transform text-ui-red ${
+                    className={`transition-transform transform text-ui-primary ${
                       isOpen[index] ? "rotate-45" : ""
                     }`}
                   >
@@ -43,7 +42,7 @@ const FAQSection: React.FC = () => {
                   </span>
                 </div>
                 <p
-                  className={`text-gray-600 py-5 ${
+                  className={`text-gray-600 py-5 text-xs ${
                     isOpen[index] ? "block" : "hidden"
                   }`}
                 >

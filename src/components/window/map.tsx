@@ -6,7 +6,7 @@ export const MapWindow = () => {
 
   return (
     <>
-      <div className="container mx-auto py-5 bg-white px-5 mb-10">
+      <div className="container mx-auto py-5 bg-white  mb-10">
         <div className="justify-center">
           <Map initialLatLng={initialLatLng} />
         </div>

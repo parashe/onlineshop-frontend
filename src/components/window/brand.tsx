@@ -17,7 +17,7 @@ const Brand = () => {
     // Show loading spinner
     windowContent = (
       <div className="fixed top-0 left-0 w-screen h-screen flex justify-center items-center bg-opacity-40 z-[100]">
-        <Spinner size={16} color="text-light-200" />
+        <Spinner size={24} color="text-light-200" />
       </div>
     );
   } else if (brandData.error || !allbrandData) {
@@ -37,7 +37,7 @@ const Brand = () => {
           <div className="text-left">
             <Title title="Explore  Our Brands" />
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-4">
+          <div className="grid p-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-4">
             {allbrandData?.brands?.map((brand, index) => (
               <div
                 key={index}
@@ -59,9 +59,9 @@ const Brand = () => {
                         height={100}
                         style={{
                           objectFit: "contain",
-                          height: "100px",
+                         
                           width: "auto",
-                          aspectRatio: "1/1",
+                          
                           cursor: "pointer",
                           margin: "auto",
                           objectPosition: "center",
@@ -69,11 +69,11 @@ const Brand = () => {
                         }}
                         src={Image_Url + brand.brandImage}
                         alt="Brand Logo"
-                        className="brand-image p-4 rounded-full mx-auto object-contain h-full w-full bg-blend-color-burn"
+                        className="brand-image p-4 max-h-[200px] md:h-[100px] rounded-full mx-auto object-contain h-full w-full bg-blend-color-burn"
                       />
                     </div>
                     <div className="text-center mt-3">
-                      <h3 className="text-sm  font-semibold text-gray-800">
+                      <h3 className="text-sm uppercase  font-semibold text-gray-800">
                         {brand.brandName}
                       </h3>
                     </div>

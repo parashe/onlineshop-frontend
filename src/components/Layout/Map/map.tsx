@@ -37,7 +37,7 @@ const Map: React.FC<MapProps> = ({ initialLatLng }) => {
     }
   }, [initialLatLng]);
 
-  return <div id="map" style={{ height: "700px" }} />;
+  return <div id="map" style={{ height: "400px", zIndex: 0 }} />;
 };
 
 export default Map;

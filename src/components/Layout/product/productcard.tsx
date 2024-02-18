@@ -8,10 +8,9 @@ const ProductImage = ({ imageUrl }: { imageUrl: string | undefined }) => (
   <div>
     <a href="#">
       <Image
-        style={{ objectFit: "contain", cursor: "pointer", height: 300, width:"100%" , aspectRatio: "19/10" }}
-        width={500}
-        height={500}
-        className="h-full w-full  object-center lg:h-full lg:w-full cursor-pointer p-2"
+        width={700}
+        height={700}
+        className="w-full h-full max-h-[400px] md:h-[200px] lg:aspect-[4/3] object-fit p-5 cursor-pointer bg-transparent  hover:scale-105 hover:border-blue-500 transition duration-300"
         src={Image_Url + imageUrl}
         alt="product image"
       />
@@ -21,7 +20,7 @@ const ProductImage = ({ imageUrl }: { imageUrl: string | undefined }) => (
 
 const ProductTitle = ({ title }: { title: string }) => (
   <a href="#">
-    <h5 className="text-lg font-semibold tracking-tight text-gray-900 dark:text-white jsutify-center  text-center ">
+    <h5 className="text-sm font-medium tracking-tight text-gray-800 dark:text-white text-center ">
       {title}
     </h5>
   </a>
@@ -37,9 +36,9 @@ export const RatingSection = ({ rating }: { rating: number }) => (
       starDimension="15px"
       starSpacing="1px"
     />
-    <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">
-      5.0
-    </span>
+    {/* <span className="bg-blue-100 text-blue-500 text-xs font-semibold mr-2 px-2.5 py-1 rounded dark:bg-blue-200 dark:text-blue-500 ml-3">
+      {rating}
+    </span> */}
   </div>
 );
 
@@ -55,20 +54,22 @@ const PriceSection = ({
 
   return (
     <div className="flex items-center justify-center space-x-4 ">
-      {discountPrice && (
+      {/* {discountPrice && (
         <span className="px-3 py-1 text-xs font-semibold bg-green-500 text-white rounded-lg dark:text-green-400">
           Save {discountPrice}%
         </span>
-      )}
+      )} */}
 
-      <span className="text-lg font-bold text-gray-900 dark:text-gray-100">
+      <span className="text-md font-medium text-gray-800 dark:text-gray-100">
         {price ? `£${price}` : "-"}
       </span>
-      {discountPrice && (
-        <span className="text-lg font-medium text-gray-500 dark:text-gray-400 line-through">
-          £{fullPrice}
-        </span>
-      )}
+      {discountPrice &&
+        discountPrice !== "0" &&
+        Number(fullPrice) !== Number(price) && (
+          <span className="text-md font-medium text-ui-red dark:text-gray-400 line-through line-through-blue-500">
+            £{fullPrice}
+          </span>
+        )}
     </div>
   );
 };
@@ -80,11 +81,11 @@ interface ProductCardProps {
 const ProductCard: React.FC<ProductCardProps> = ({
   product, // Update prop name here
 }: ProductCardProps) => {
+  const fullPrice =
+    (Number(product.discountPrice) / 100) * Number(product.price) +
+    Number(product.price);
   return (
-    <div
-      style={{ cursor: "pointer" }}
-      className="w-full  bg-white hover:shadow-lg transition duration-300   "
-    >
+    <div className="w-full bg-white rounded-md  shadow-sm shadow-gray-200 hover:shadow-lg transition duration-300 cursor-pointer relative">
       {product.productImages && product.productImages.length > 0 && (
         <ProductImage imageUrl={product.productImages?.[0] || ""} />
       )}
@@ -97,6 +98,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
           discountPrice={product.discountPrice}
         />
       </div>
+
+      {Number(product.discountPrice) > 0 && (
+        <div className="absolute top-0 left-0 mt-0 ml-0">
+          <span className="px-2 py-1 text-xs font-medium bg-ui-primary text-white  dark:text-ui-primary-dark">
+            Save {product.discountPrice}%
+          </span>
+        </div>
+      )}
     </div>
   );
 };

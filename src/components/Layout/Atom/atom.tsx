@@ -58,7 +58,7 @@ export const Input: React.FC<InputProps> = ({
   required,
 }) => {
   const defaultClassName =
-    "w-full px-4 py-3 rounded-sm shadow-sm focus:ring focus:ring-opacity-50 focus:ring-blue-500 border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-500";
+    "w-full px-4 py-2 rounded-lg placeholder:text-gray-300 placeholder:text-xs shadow-sm focus:ring focus:ring-opacity-50 focus:ring-ui-primary border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-ui-primary";
 
   const finalClassName = className
     ? defaultClassName + " " + className
@@ -262,7 +262,7 @@ export const Spinner: React.FC<SpinnerProps> = ({
     <div role="status">
       <svg
         aria-hidden="true"
-        className={`w-${size} h-${size} mr-2 ${color} animate-spin fill-ui-red`}
+        className={`w-${size} h-${size} mr-2 ${color} animate-spin fill-ui-primary`}
         viewBox="0 0 100 101"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -566,8 +566,6 @@ export const InputFile: React.FC<InputFileProps> = ({
     onChange(event);
   };
 
-  console.log("onSelectItem", onSelectItem);
-
   return (
     <>
       <div className="flex items-center justify-center w-full">
@@ -650,17 +648,17 @@ export const SelectWithArrow: React.FC<SelectWithArrowProps> = ({
   return (
     <div className="relative">
       <select
-        className="rounded border border-gray-400 py-2 pl-3 pr-10 focus:outline-none focus:border-red-500 text-base"
+        className="rounded border border-gray-400 py-1 cursor-pointer  text-xs pl-3 pr-10 focus:outline-none focus:border-red-500 "
         value={selectedValue}
         onChange={handleOptionChange}
       >
         {options.map((option, index) => (
-          <option key={index} value={option}>
+          <option key={index} value={option} className="text-xs">
             {option}
           </option>
         ))}
       </select>
-      <div className="absolute right-0 top-0 h-full w-10 text-center text-ui-red pointer-events-none flex items-center justify-center">
+      <div className="absolute right-0 top-0 h-full w-10 text-center text-ui-primary pointer-events-none flex items-center justify-center">
         {/* Add your arrow icon here */}
       </div>
     </div>
@@ -672,14 +670,11 @@ interface TitleProps {
 }
 
 export const Title: React.FC<TitleProps> = ({ title }) => (
-  <div className="items-center mb-16 ">
+  <div className="items-center mb-10 ">
     {/* Horizontal line at the start of the title */}
-    
 
     {/* Title text */}
-    <h4 className="text-xl md:text-xl text-gray-800 uppercase font-black">
-      {title}
-    </h4>
+    <h4 className="text-lg text-gray-800 uppercase font-semibold">{title}</h4>
 
     {/* Horizontal line at the end of the title */}
     <div className="w-8 mt-3 ml-4 border-t-4 border-ui-primary"></div>

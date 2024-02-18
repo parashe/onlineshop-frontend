@@ -11,7 +11,7 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
   className,
   link,
 }) => {
-  const defaultClassName = "ml-1 text-sm font-medium text-ui-red md:ml-2";
+  const defaultClassName = "ml-1 text-sm font-medium text-ui-primary md:ml-2";
 
   const finalClassName = className
     ? defaultClassName + " " + className

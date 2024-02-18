@@ -33,7 +33,7 @@ const ScrollToTopButton: React.FC = () => {
     <>
       {isVisible && (
         <Button
-          className="  fixed bottom-5 right-5 p-5 bg-ui-red hover:bg-red-400 text-white py-2 px-4 rounded-full flex items-center space-x-2"
+          className="  fixed bottom-5 right-5 p-5 bg-ui-primary hover:bg-red-400 text-white py-2 px-4 rounded-full flex items-center space-x-2"
           onClick={scrollToTop}
         >
           <svg
