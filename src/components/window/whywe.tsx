@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const WhyWeSection = () => {
   return (
-    <section className="">
+    <section className="md:pb-32">
       <div className="container mx-auto ">
         <div className="md:mt-32 mb-10 pt-10 px-5 md:20px xl:px-32 ">
           {/* <div className="text-left ml-2 relative ">

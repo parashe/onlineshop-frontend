@@ -18,9 +18,9 @@ const FAQSection: React.FC = () => {
       <div className="md:mt-10 mb-10 pt-10 md:20px md:px-20 xl:px-32 shadow-sm bg-white ">
           <div className="text-left ml-2 relative mb-10">
             <div className="text-left ml-2 relative ">
-              <div className="text-left ml-2 relative ">
-                <Title title="Frequently Asked Questions" />
-              </div>
+            <h3 className="mx-auto lg:mx-0 uppercase text-ui-primary-dark lg:mb-5 text-md text-justify font-black">
+                Frequently Asked Questions
+              </h3>
             </div>
           </div>
           <div className="space-y-4">

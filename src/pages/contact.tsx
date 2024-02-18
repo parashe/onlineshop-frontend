@@ -1,12 +1,9 @@
 import { useState, useEffect } from "react";
 import Navbar from "@/components/Layout/Navbar/Navbar";
-import { About } from "@/components/window/about";
 import { Contact } from "@/components/window/contact";
-import Testimonial from "@/components/window/testomonial";
 import { Spinner } from "@/components/Layout/Atom/atom";
 import { Breadcrumb } from "@/components/Layout/BreadCrumb/breadcrumb";
 import Footer from "@/components/window/footer";
-import WhyWeSection from "@/components/window/whywe";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -34,7 +31,7 @@ const Home = () => {
           <Navbar />
           <Breadcrumb title="Contact" />
           <Contact />
-          
+
           <Footer />
         </>
       )}

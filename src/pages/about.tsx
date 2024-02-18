@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Navbar from "@/components/Layout/Navbar/Navbar";
 import { About } from "@/components/window/about";
-import { Contact } from "@/components/window/contact";
 import Testimonial from "@/components/window/testomonial";
 import { Spinner } from "@/components/Layout/Atom/atom";
 import Footer from "@/components/window/footer";
@@ -29,7 +28,6 @@ const Home = () => {
           <Spinner size={24} color="text-light-200" />
         </div>
       ) : (
-   
         <>
           <Navbar />
           <Breadcrumb title="About" />

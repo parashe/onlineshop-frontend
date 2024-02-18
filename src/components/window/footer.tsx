@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className=" bg-gray-50 text-center text-neutral-600 dark:bg-neutral-600 dark:text-neutral-200 lg:text-left">
       <div className="container mx-auto px-6 py-10">
         <div className="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-between">
-          <div className="mr-12 hidden lg:block text-ui-primary font-bold">
+          <div className="mr-12 hidden  lg:block text-ui-primary font-black">
             <span>Get connected with us on social networks</span>
           </div>
           {/* Social network icons container */}
@@ -248,12 +248,12 @@ const Footer = () => {
         </div>
       </div>
       <div className="bg-gray-50 p-6 text-center dark:bg-neutral-700 border-t-2">
-        <span>© 2023 Copyright:</span>
+        <span>© 2023 Copyright</span>
         <a
-          className="font-semibold text-neutral-600 dark:text-neutral-400"
+          className="font-semibold text-ui-primary hover:underline dark:text-neutral-400"
           href="#"
         >
-          Online Shop
+         &nbsp; Online Shop
         </a>
       </div>
     </footer>

@@ -9,7 +9,6 @@ import Footer from "./footer";
 import OfferProducts from "./offerproduct";
 import Product from "./product";
 import ScrollToTopButton from "./scrollup";
-import TestimonialCarousel from "./testomonial";
 import WhyWeSection from "./whywe";
 
 export const Main_view = () => {
@@ -20,9 +19,7 @@ export const Main_view = () => {
       <Brand />
       <OfferProducts />
       <Product />
-
       <WhyWeSection />
-      <TestimonialCarousel />
       <Footer />
       <ScrollToTopButton />
     </>
