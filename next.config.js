@@ -21,7 +21,7 @@ module.exports = {
   // },
   
     images: {
-      domains: ['puce-determined-cockatoo.cyclic.app', 'localhost'],
+      domains: ['online-shop-qctw96z3w-parash-giris-projects.vercel.app', 'localhost'],
     },
 
 };
