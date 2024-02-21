@@ -28,7 +28,7 @@ const ProductDetailPage = () => {
       {isLoading ? (
         // Show a loading screen while isLoading is true
         <div className="fixed top-0 left-0 w-screen h-screen flex justify-center items-center  bg-opacity-40 z-[100]">
-          <Spinner size={24} color="text-light-200" />
+          <Spinner size={20} color="text-light-200" />
         </div>
       ) : (
         <>

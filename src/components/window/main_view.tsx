@@ -24,7 +24,7 @@ let windowContent =<></>
 if(product.isLoading || carousel.isLoading){
   windowContent = (
     <div className="fixed top-0 left-0 w-screen h-screen flex justify-center items-center  bg-opacity-40 z-[100]">
-      <Spinner size={24} color="text-light-400" />
+      <Spinner size={20} color="text-light-400" />
     </div>
   );
 }
