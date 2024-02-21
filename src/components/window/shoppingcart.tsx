@@ -168,7 +168,7 @@ const ShoppingCart: React.FC = () => {
     // Displaying the cart items if everything is okay
     windowContent = (
       <>
-        <div className="container mx-auto w-full px-2 md:mt-14 ">
+        <div className="container h-screen mx-auto w-full px-2 md:mt-14 ">
         <h1 className="font-black text-md  px-7">Shopping Cart</h1>
           <div className="flex my-5  flex-col md:flex-row gap-5">
             <div className=" sm:w-full w-full md:w-4/5  mr-0 shadow-md   bg-white">
