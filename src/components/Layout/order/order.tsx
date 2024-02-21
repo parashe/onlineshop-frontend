@@ -16,21 +16,21 @@ const OrderLayout: React.FC<OrderProps> = ({
   orderStatus,
 }) => {
   return (
-    <div className="w-full  bg-white md:py-10 md:px-10  m-0  ">
+    <div className="w-full   bg-white   ">
+    
       {items.map((item: any, index: number) => (
         <div
           key={index}
-          className="flex items-center hover:bg-gray-100 border-b-2 cursor-pointer border-gray-200 md:px-6 py-5 "
+          className="flex items-center px-5 md:px-12 hover:bg-gray-50 cursor-pointer  shadow-md  py-5 "
         >
           {/* Product details */}
           <div className="flex w-2/5">
             {/* Product image */}
             <div className="w-20">
               <Image
-                style={{ objectFit: "fill", cursor: "pointer", height: 100 }}
-                width={500}
-                height={500}
-                className="h-24"
+                width={700}
+                height={700}
+                className="h-30 object-contain w-full"
                 src={Image_Url + item.productImage}
                 alt=" cart product image"
               />
@@ -38,7 +38,9 @@ const OrderLayout: React.FC<OrderProps> = ({
 
             {/* Product info */}
             <div className="flex flex-col justify-center ml-4 flex-grow ">
-              <span className="font-bold text-sm ">{item.productName}</span>
+              <span className=" text-xs md:font-medium md:text-sm ">
+                {item.productName}
+              </span>
             </div>
           </div>
           <div className="text-center w-1/3  font-semibold text-sm ">
@@ -51,15 +53,16 @@ const OrderLayout: React.FC<OrderProps> = ({
             <span className="font-bold text-sm ">{item.color}</span>
           </div>
 
-          <span className="text-center w-1/4 font-semibold text-sm">
+          <span className="text-center w-1/4 text-xs md:font-medium md:text-sm ">
             £{(Number(item.price) * Number(item.quantity)).toFixed(0)}
           </span>
         </div>
       ))}
-      {orderStatus && (
-        <div className="md:mt-10 mt-4">
-          <h3 className="text-lg font-semibold mb-2">Order Status:</h3>
-          <div className="flex space-x-2">
+
+{orderStatus && (
+        <div className="py-5 px-5 flex flex-row gap-4">
+          <h3 className="text-xs font-semibold  ">Order Status:</h3>
+          <div className="flex ">
             {orderStatus.map(
               (item, index) =>
                 item.isCompleted && (
@@ -73,7 +76,7 @@ const OrderLayout: React.FC<OrderProps> = ({
                         : item.type === "shipped"
                         ? "bg-green-500"
                         : "bg-gray-500"
-                    } text-white px-3 py-1 rounded-full text-sm font-semibold`}
+                    } text-white px-3 py-1 rounded-full text-xs `}
                   >
                     {item.type}
                   </span>
@@ -82,6 +85,7 @@ const OrderLayout: React.FC<OrderProps> = ({
           </div>
         </div>
       )}
+
     </div>
   );
 };

@@ -140,7 +140,12 @@ export const UseCategory = (id?: string) => {
   try {
     return useQuery<Categories>(["categories"], async () => {
       const response: AxiosResponse<Categories> = await axios.get(
-        `${Base_Url}/categories`
+        `${Base_Url}/categories`,
+        {
+          headers: {
+            Authorization: `Bearer fNuzoK5QMFQZAebDktdROvOo`,
+          },
+        }
       );
       return response.data; // Return the data directly
     });
@@ -153,7 +158,12 @@ export const UseCategoryWithParentID = () => {
   try {
     return useQuery<Categories>(["categorieswithID"], async () => {
       const response: AxiosResponse<Categories> = await axios.get(
-        `${Base_Url}/categories-with-parentId`
+        `${Base_Url}/categories-with-parentId`,
+        {
+          headers: {
+            Authorization: `Bearer fNuzoK5QMFQZAebDktdROvOo`,
+          },
+        }
       );
       return response.data; // Return the data directly
     });
@@ -168,7 +178,12 @@ export const UseColor = () => {
   try {
     return useQuery<Color>(["color"], async () => {
       const response: AxiosResponse<Color> = await axios.get(
-        `${Base_Url}/colors`
+        `${Base_Url}/colors`,
+        {
+          headers: {
+            Authorization: `Bearer fNuzoK5QMFQZAebDktdROvOo`,
+          },
+        }
       );
       console.log("response", response);
       return response.data; // Return the data directly
@@ -182,7 +197,12 @@ export const UseSize = () => {
   try {
     return useQuery<Size>(["sizes"], async () => {
       const response: AxiosResponse<Size> = await axios.get(
-        `${Base_Url}/sizes`
+        `${Base_Url}/sizes`,
+        {
+          headers: {
+            Authorization: `Bearer fNuzoK5QMFQZAebDktdROvOo`,
+          },
+        }
       );
       return response.data; // Return the data directly
     });
@@ -195,7 +215,12 @@ export const UseBrand = () => {
   try {
     return useQuery<Brand>(["brand"], async () => {
       const response: AxiosResponse<Brand> = await axios.get(
-        `${Base_Url}/brands`
+        `${Base_Url}/brands`,
+        {
+          headers: {
+            Authorization: `Bearer fNuzoK5QMFQZAebDktdROvOo`,
+          },
+        }
       );
       return response.data; // Return the data directly
     });
@@ -208,7 +233,12 @@ export const UseProduct = (id?: string) => {
   try {
     return useQuery<Product>(["product"], async () => {
       const response: AxiosResponse<Product> = await axios.get(
-        `${Base_Url}/products`
+        `${Base_Url}/products`,
+        {
+          headers: {
+            Authorization: `Bearer fNuzoK5QMFQZAebDktdROvOo`,
+          },
+        }
       );
       return response.data; // Return the data directly
     });
@@ -225,7 +255,12 @@ export const useProductDetails = (id?: string) => {
       }
 
       const response: AxiosResponse<Product> = await axios.get(
-        `${Base_Url}/productsdetails/${id}`
+        `${Base_Url}/productsdetails/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer fNuzoK5QMFQZAebDktdROvOo`,
+          },
+        }
       );
       return response.data;
     });
@@ -294,7 +329,12 @@ export const UseCart = () => {
       const user = Cookies.get("userID");
 
       const response: AxiosResponse<Cart> = await axios.get(
-        `${Base_Url}/carts/${user}`
+        `${Base_Url}/carts/${user}`,
+        {
+          headers: {
+            Authorization: `Bearer fNuzoK5QMFQZAebDktdROvOo`,
+          },
+        }
       );
       return response.data;
     });
@@ -461,7 +501,8 @@ export const UseCarousel = () => {
   return useQuery<Carousel>(["carousels"], async () => {
     try {
       const response: AxiosResponse<Carousel> = await axios.get(
-        `${Base_Url}/carousels`
+        `${Base_Url}/carousels`,
+        
       );
       return response.data; // Return the data directly
     } catch (error: any) {

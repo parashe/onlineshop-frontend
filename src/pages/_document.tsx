@@ -17,7 +17,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          {/* Favicons, Google site verification and other common meta tags across the site. */}
+        <link rel="icon" href="/images/logo.png" sizes="any" />
         </Head>
         <body>
           <Main />

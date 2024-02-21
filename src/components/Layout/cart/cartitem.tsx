@@ -26,30 +26,28 @@ const CartItem: React.FC<CartItemProps> = ({
   handleRemoveCart,
 }) => {
   return (
-    <div className="w-full  bg-white md:py-10 md:px-10  m-0  ">
+    <div className="w-full  bg-gray-50 md:py-10 md:px-10 hover:bg-gray-50 cursor-pointer ">
       <div className="">
-        <div className="flex items-center hover:bg-gray-100 border-b-2 cursor-pointer border-gray-200 md:px-6 py-5 ">
+        <div className="flex items-center   cursor-pointer  py-5">
           {/* Product details */}
-          <div className="flex w-2/5">
+          <div className="flex  w-2/5">
             {/* Product image */}
             <div className="w-20">
               <Image
-                style={{ objectFit: "fill", cursor: "pointer", height: 100 }}
-                width={500}
-                height={500}
-                className="h-24"
+                width={700}
+                height={700}
+                className="h-30 object-contain w-full"
                 src={Image_Url + productImage}
                 alt=" cart product image"
               />
             </div>
-
             {/* Product info */}
-            <div className="flex flex-col justify-center ml-4 flex-grow ">
+            <div className="flex flex-col px-5 justify-center flex-grow ">
               <span className="font-bold text-sm ">{productName}</span>
               <span className="text-red-500 text-xs">{brand}</span>
               <a
                 href="#"
-                className="font-semibold text-blue-500 hover:text-ui-red  text-xs"
+                className="font-semibold text-blue-500 hover:text-ui-primary  text-xs"
                 onClick={handleRemoveCart}
               >
                 Remove
@@ -60,7 +58,7 @@ const CartItem: React.FC<CartItemProps> = ({
           <div className="flex flex-wrap space-x-0  mb-5 w-1/5">
             <Button
               onClick={onQuantityDecrease}
-              className="bg-ui-red px-1 pt-1 pb-1 md:px-3 md:pt-2 md:pb-2"
+              className="bg-ui-primary px-1 pt-1 pb-1 md:px-3 md:pt-2 md:pb-2"
             >
               {" "}
               <MinusSvg fg="white" />
@@ -72,7 +70,7 @@ const CartItem: React.FC<CartItemProps> = ({
             />
             <Button
               onClick={onQuantityIncrease}
-              className="bg-ui-red px-1 pt-1 pb-1 md:px-3 md:pt-2 md:pb-2"
+              className="bg-ui-primary px-1 pt-1 pb-1 md:px-3 md:pt-2 md:pb-2"
             >
               <PlusSvg fg="white" />
             </Button>

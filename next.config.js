@@ -19,9 +19,12 @@ module.exports = {
   //   domains: ["localhost"], // Add other domains if needed
 
   // },
-  
-    images: {
-      domains: ['online-shop-qctw96z3w-parash-giris-projects.vercel.app', 'localhost'],
-    },
 
+  images: {
+    domains: [
+      "api-onlineshop.vercel.app",
+      "localhost",
+      "onlineshop-zp2h.onrender.com",
+    ],
+  },
 };

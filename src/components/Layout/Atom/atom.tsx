@@ -259,7 +259,7 @@ export const Spinner: React.FC<SpinnerProps> = ({
   color = "text-gray-200",
 }) => {
   return (
-    <div role="status">
+    <div role="status" >
       <svg
         aria-hidden="true"
         className={`w-${size} h-${size} mr-2 ${color} animate-spin fill-ui-primary`}
