@@ -113,9 +113,10 @@ const LoginPage = ({ onClose }: UserModalDetailsProps) => {
 
   return (
     <>
-      <div className="fixed top-0 left-0 w-full h-screen flex justify-center items-center bg-dark-000 bg-opacity-40 z-[100]">
-        <div className="relative bg-white md:bg-transparent rounded-lg shadow w-[90%] sm:w-[90%] md:w-[80%] lg:w-[600px] h-[80%] sm:h-[80%] md:h-[70%] lg:h-auto">
-          <div className="flex items-start justify-between  p-4 border-b  md:border-none rounded-t dark:border-gray-600">
+      <div className="fixed   top-0 left-0 flex justify-center items-center w-full h-full bg-black bg-opacity-50 z-50">
+        {/* </div> <div className="fixed bg-black   w-full h-full inset-0 z-50 flex items-start justify-center overflow-y-auto bg-opacity-50"> */}
+        <div className="modal-content bg-white  w-full max-w-lg  max-h-[80vh] p-8 rounded-xl shadow-lg overflow-auto">
+          <div className="flex items-center justify-between   md:border-none rounded-t dark:border-gray-600">
             <button
               type="button"
               onClick={onClose}
@@ -127,9 +128,11 @@ const LoginPage = ({ onClose }: UserModalDetailsProps) => {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 14 14"
+                color="red"
               >
                 <path
-                  stroke="currentColor"
+                  fill="red"
+                  stroke="red"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
@@ -139,8 +142,8 @@ const LoginPage = ({ onClose }: UserModalDetailsProps) => {
               <span className="sr-only">Close modal</span>
             </button>
           </div>
-          <div className="flex flex-col items-center justify-center px-6 py-8 pt-4 lg:pt-0 lg:pb-0">
-            <div className="w-full border-none bg-white md:border-2 md:border-gray-300 rounded-lg shadow lg:shadow-red-100 dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+          <div className="flex flex-col w-full items-center justify-center ">
+            <div className="w-full border-none bg-white md:border-2 md:border-gray-300 rounded-lg  dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
               <div className="py-0">
                 <a href="#" className="flex justify-center">
                   <Image
@@ -158,9 +161,9 @@ const LoginPage = ({ onClose }: UserModalDetailsProps) => {
                 </a>
               </div>
 
-              <div className="pt-0 px-6 pb-6 space-y-4 md:space-y-6  mb-10 w-full ">
+              <div className="pt-0 px-auto py-2 space-y-4 md:space-y-6  w-full ">
                 <div className="flex justify-center h-[90%]">
-                  <h1 className="text-[16px] justify-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                  <h1 className="font-black  text-lg  justify-start  leading-relaxed  text-gray-900 ">
                     Sign In To Continue
                   </h1>
                 </div>

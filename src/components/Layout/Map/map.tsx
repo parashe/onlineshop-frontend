@@ -37,7 +37,7 @@ const Map: React.FC<MapProps> = ({ initialLatLng }) => {
     }
   }, [initialLatLng]);
 
-  return <div id="map" style={{ height: "400px", zIndex: 0 }} />;
+  return <div id="map" style={{ height: "400px", zIndex: 0 }} className="shadow-md" />;
 };
 
 export default Map;

@@ -55,15 +55,15 @@ const SearchModalsFunctions: React.FC<SearchModalsFunctionsProps> = ({
 
   return (
     <>
-      <div className="relative top-0 bg-white rounded-lg shadow dark:bg-gray-500 md:w-[1000px] w-full">
-        <div className="flex items-start justify-between bg-gray-100 p-4 border-b rounded-t dark:border-gray-600">
+      <div className="relative top-0 bg-white rounded-lg shadow dark:bg-gray-500 md:max-w-[700px] w-full">
+        <div className="flex items-start justify-between bg-gray-white p-4 border-b rounded-t dark:border-gray-600">
           <h3 className="md:px-10 text-xl font-semibold text-gray-900 dark:text-white">
             Search
           </h3>
           <button
             type="button"
             onClick={onClose}
-            className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+            className="text-ui-primary bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
           >
             <svg
               className="w-3 h-3"
@@ -84,15 +84,15 @@ const SearchModalsFunctions: React.FC<SearchModalsFunctionsProps> = ({
           </button>
         </div>
 
-        <div className="container mx-auto md:p-12 md:pt-8 w-full md:pb-10 bg-gray-100">
-          <div className="md:max-w-[1300px] md:p-6 bg-white pb-10 pt-10 md:pb-16 md:pt-16">
+        <div className="container mx-auto md:p-12 md:pt-8 w-full md:pb-10 bg-white">
+          <div className="md:max-w-[700px] md:p-6 bg-white pb-10 pt-10 md:pb-16 md:pt-16">
             <form onSubmit={handleSearch}>
               <div className="md:flex">
                 <div
                   id="dropdown"
                   className={`z-10 ${
                     showResults ? "block" : "hidden"
-                  } absolute mt-14 w-full md:w-[85%] bg-white divide-y divide-gray-200 rounded-lg shadow dark:bg-gray-700`}
+                  } absolute mt-14 w-full md:w-[75%] bg-white divide-y divide-gray-200 rounded-md shadow dark:bg-gray-700`}
                 >
                   <ul
                     className="py-3 text-sm text-gray-700 dark:text-gray-200"
@@ -121,9 +121,10 @@ const SearchModalsFunctions: React.FC<SearchModalsFunctionsProps> = ({
                 </div>
                 <div className="relative w-full">
                   <input
+                    autoComplete="off"
                     type="search"
                     id="search-dropdown"
-                    className="block p-4 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-100 border-l-2 border  border-gray-400 focus:ring-blue-500  focus:border-blue-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
+                    className="block p-4 w-full z-20 text-sm rounded-md border  text-gray-900 bg-gray-50 rounded-r-lg   dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                     placeholder="Search for products"
                     required
                     value={searchQuery}

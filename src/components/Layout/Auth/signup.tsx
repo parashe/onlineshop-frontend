@@ -261,7 +261,7 @@ const SignUp = ({ onClose }: UserModalDetailsProps) => {
               </div>
               <div className="w-full">
               <Input
-                  value={fullName}
+                  
                   onChange={(e) => handleChangeFullName(e.target.value)}
                   autoComplete="off"
                   type="text"
@@ -277,7 +277,7 @@ const SignUp = ({ onClose }: UserModalDetailsProps) => {
                 onClick={() => {
                   handleUserSave();
                 }}
-                className="px-8 py-2 rounded-sm bg-ui-primary hover:bg-orange-600 text-white text-md space-x-0"
+                className="px-10 py-2 rounded-sm bg-indigo-500 hover:bg-indigo-600 text-white text-md space-x-0"
               >
                 {isSaving ? (
                   <div className="flex justify-center">

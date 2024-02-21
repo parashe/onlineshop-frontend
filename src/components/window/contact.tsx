@@ -6,7 +6,6 @@ import {
   Input,
   Spinner,
   TextAreaInput,
-  Title,
 } from "../Layout/Atom/atom";
 
 import MapWindow from "./map";
@@ -138,15 +137,15 @@ export const Contact = () => {
 
   return (
     <>
-      <section className="mt-10 mb-5  ">
+      <section className="mt-10 mb-5  bg-white ">
         <div className="container mx-auto mt-10 ">
-          <div className="md:mt-10 mb-10 pt-10 md:20px md:px-20 xl:px-32 ">
+          <div className="md:mt-10 mb-10 pt-10 md:20px md:px-20 xl:px-32  ">
             <div className="text-left ml-2 relative ">
             <h3 className="mx-auto lg:mx-0 uppercase text-ui-primary-dark lg:mb-5 text-md text-justify font-black">
                Contact Us
               </h3>
             </div>
-            <div className="py-10 ">
+            <div className="p-10 shadow-md my-10 ">
               <form onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="form-group">
@@ -230,7 +229,7 @@ export const Contact = () => {
 
                 <div className="flex justify-end mt-5">
                   {/* Button for form submission */}
-                  <Button className="px-8 py-2 rounded-sm bg-ui-primary text-white text-md space-x-0">
+                  <Button className="px-10 py-2 rounded-sm bg-indigo-600 hover:bg-indigo-700 text-white text-md space-x-0">
                     {isSaving ? (
                       <div className="flex justify-center">
                         {/* Show a spinner during saving process */}
@@ -243,7 +242,7 @@ export const Contact = () => {
                     )}
                   </Button>
                 </div>
-                <div className="mt-8">
+                <div className="mt-1">
                   {/* Show an alert message if necessary */}
                   {isAlertVisible && (
                     <Alert

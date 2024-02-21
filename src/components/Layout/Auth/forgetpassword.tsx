@@ -44,7 +44,7 @@ const ForgetPassword = ({ onClose }: ResetPasswordProps) => {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full h-screen flex justify-center items-center bg-dark-000 bg-opacity-40 z-[100]">
+    <div className="fixed top-0 left-0 w-full h-screen flex justify-center items-center bg-dark-000  z-[100]">
       <div className="relative bg-white md:bg-transparent rounded-lg shadow w-[90%] sm:w-[90%] md:w-[80%] lg:w-[600px] h-[80%] sm:h-[80%] md:h-[70%] lg:h-auto">
         <div className="flex items-start justify-between  p-4 border-b  md:border-none rounded-t dark:border-gray-600">
           <button
@@ -60,7 +60,7 @@ const ForgetPassword = ({ onClose }: ResetPasswordProps) => {
               viewBox="0 0 14 14"
             >
               <path
-                stroke="currentColor"
+                stroke="red"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
