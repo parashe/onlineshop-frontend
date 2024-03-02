@@ -34,7 +34,7 @@ const ProductDetailPage = () => {
         <>
           <Navbar />
 
-          <Breadcrumb title="Product Details" link="/" />
+          <Breadcrumb title="Product Details" href="/" />
 
           <ProductDetails slug={slug as string} id={id as string} />
 
