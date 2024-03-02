@@ -43,7 +43,7 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
           >
             {/* Displaying the thumbnail image */}
             <Image
-              style={{ objectFit: "fill", cursor: "pointer", height: 80 }}
+              style={{ objectFit: "contain", cursor: "pointer", height: 80 }}
               width={100}
               height={100}
               src={Image_Url + image}
@@ -61,12 +61,12 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
           <div className="modal-content">
             {/* Displaying the selected image in a larger view */}
             <Image
-              style={{ objectFit: "fill", cursor: "pointer", height: 450 }}
+              style={{ objectFit: "cover", cursor: "pointer", height: 450 }}
               width={500}
               height={500}
               src={getImageUrl(selectedImage)}
               alt="product"
-              className="modal-image"
+              className="modal-image aspect-[1/1] bg-white p-5 bg-blend-color-burn  brightness-105 w-full cursor-pointer hover:scale-105 transition duration-300"
             />
           </div>
         </div>

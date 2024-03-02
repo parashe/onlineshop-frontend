@@ -33,7 +33,7 @@ const Home = () => {
         // Once isLoading is false, render the actual content
         <>
           <Navbar />
-          <Breadcrumb title="FAQ" />
+          <Breadcrumb title="FAQ" href="faq" />
           <FAQSection />
 
           <WhyWeSection />

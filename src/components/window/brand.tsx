@@ -41,7 +41,7 @@ const Brand = () => {
             {allbrandData?.brands?.map((brand, index) => (
               <div
                 key={index}
-                className="col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1 mt-1 shadow-md shadow-gray-200 border border-gray-50 rounded-xl"
+                className="col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1 mt-1 shadow-xl  rounded-xl"
               >
                 <Link
                   href={{
@@ -55,13 +55,11 @@ const Brand = () => {
                   <div className="bg-white rounded-lg p-4 cursor-pointer hover:shadow-lg transition duration-300">
                     <div className="bg-white">
                       <Image
-                        width={100}
-                        height={100}
+                        width={200}
+                        height={200}
                         style={{
                           objectFit: "contain",
-                         
-                          width: "auto",
-                          
+
                           cursor: "pointer",
                           margin: "auto",
                           objectPosition: "center",

@@ -29,7 +29,7 @@ const Home = () => {
         // Once isLoading is false, render the actual content
         <>
           <Navbar />
-          <Breadcrumb title="Contact" />
+          <Breadcrumb title="Contact" href="contact" />
           <Contact />
 
           <Footer />

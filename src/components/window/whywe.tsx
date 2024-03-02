@@ -13,11 +13,11 @@ const WhyWeSection = () => {
           </div> */}
           <div className="flex flex-col md:flex-col lg:flex-row justify-between gap-8 ">
             <Image
-              src="/images/shopping.svg"
+              src="/images/imagewhy.avif"
               width={500}
               height={500}
               alt="whywe"
-              className="aspect-auto h-full bg-orange-50 rounded-lg  mix-blend-color-burn cursor-pointer   p-5 hover:scale-105 hover:border-blue-500 transition duration-300"
+              className="aspect-[1/1] h-[500px] bg-orange-50 rounded-lg    cursor-pointer   p-5 hover:scale-105 hover:border-blue-500 transition duration-300"
             />
 
             <div className="flex flex-col justify-start">

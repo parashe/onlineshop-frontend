@@ -25,7 +25,7 @@ export const AllProduct = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [sortOption, setSortOption] = useState("featured");
-  const itemsPerPage = 24;
+  const itemsPerPage = 15;
   const [categoryData, setCategoryData] = useState<Categories | null>(null);
   const [brand, setBrandData] = useState<Brand | null>(null);
 
@@ -51,15 +51,42 @@ export const AllProduct = () => {
   const renderSearchAndDrodownGrid = () => {
     return (
       <>
-        <div className="md:flex items-center justify-start gap-6 mb-6">
+        <div className="md:flex items-center justify-start gap-6 ">
           {/* Search bar */}
-          <input
+          {/* <input
             type="text"
             placeholder="Search products..."
             className="w-full md:w-2/5 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-ui-primary-dark"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-          />
+          /> */}
+                <div className="relative">
+                <div className="absolute inset-y-0 left-0 flex items-center pl-3">
+                  <svg
+                    className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M19 19l-4-4m0-7a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
+                    />
+                  </svg>
+                </div>
+                <input
+                  type="text"
+                  placeholder="Search products..."
+                  value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+                  className="block w-full p-3 min-w-[400px] max-w-[500px] text-center text-sm text-gray-900 border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-ui-primary-dark"
+                  required
+                />
+              </div>
 
           {/* Sort dropdown */}
           <select
@@ -134,7 +161,7 @@ export const AllProduct = () => {
       <>
         {Array.isArray(sortedAndPaginatedProducts) &&
         sortedAndPaginatedProducts.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2">
             {sortedAndPaginatedProducts.map((product: any, index: number) => (
               <Link
                 href={{
@@ -262,8 +289,8 @@ export const AllProduct = () => {
   } else {
     // Show user data table if data is available
     windowContent = (
-      <div className="flex flex-col-reverse justify-center md:flex-row mt-10  bg-white border-2 p-10  ">
-        <div className="w-full md:w-[20%] lg:w-1/6 bg-white p-4 my-10">
+      <div className="flex flex-col-reverse justify-center md:flex-row mt-10 md:mt-16  bg-white border-2 p-10  ">
+        <div className="w-full md:w-[20%] lg:w-1/6 bg-white p-4 ">
           <div className="text-left relative pb-2  border-b-2 border-ui-primary-dark ">
             <h3 className="text-xl uppercase font-black dark:bg-gray-200 text-gray-800">
               Categories
@@ -282,7 +309,7 @@ export const AllProduct = () => {
         </div>
 
         {/* Main content area */}
-        <div className="w-full  md:w-[80%] lg:w-[95%] p-4 mt-10 ">
+        <div className="w-full  md:w-[80%] lg:w-[95%] p-4  ">
           {/* search and dropdown */}
           {renderSearchAndDrodownGrid()}
 

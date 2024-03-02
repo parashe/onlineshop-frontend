@@ -30,7 +30,7 @@ const Home = () => {
       ) : (
         <>
           <Navbar />
-          <Breadcrumb title="About" />
+          <Breadcrumb title="About" href="about" />
 
           <About />
           <WhyWeSection />

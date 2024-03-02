@@ -62,58 +62,58 @@ const TestimonialCarousel: React.FC = () => {
     <>
       <div className="container mx-auto py-10 my-10">
         <div className="md:mt-10 mb-10 pt-10 md:px-20 xl:px-32 ">
-        <div className="text-left ml-2 px-2  ">
-                <Title title="What Our Customers Say" />
-              </div>
-              <div className="px-5">
-          <Carousel
-            swipeable={true}
-            draggable={true}
-            showDots={true}
-            responsive={responsive}
-            infinite={true}
-            autoPlay={true}
-            keyBoardControl={true}
-            customTransition="all .5"
-            transitionDuration={500}
-            containerClass="carousel-container"
-            removeArrowOnDeviceType={["tablet", "mobile"]}
-            dotListClass="custom-dot-list-style"
-            itemClass="carousel-item-padding-40-px "
-            arrows={false}
-          >
-            {testimonials.map((testimonial) => (
-              <div
-                key={testimonial.id}
-                className="p-10 flex flex-row justify-between gap-6 items-center shadow-lg border border-gray-50 bg-white  "
-              >
-                <div className="mx-auto mb-4 h-20 w-64 md:h-24 md:w-48 rounded-full overflow-hidden">
-                  <Image
-                    width={500}
-                    height={500}
-                    objectFit="cover"
-                    src={testimonial.image}
-                    alt="testimonial"
-                    className="w-full h-full"
-                  />
-                </div>
-                <div>
-                  <div className="flex flex-col items-center text-justify">
-                    <p className="text-sm text-gray-800 md:pl-10 md:pr-10">
-                      {testimonial.quote}
-                    </p>
-                    <p className="text-sm font-semibold text-ui-primary-dark mt-2">
-                      {testimonial.name}
-                    </p>
-                    <p className="text-sm text-gray-800 mt-2">
-                      {testimonial.position}
-                    </p>
+          <div className="text-left ml-2 px-2  ">
+            <Title title="What Our Customers Say" />
+          </div>
+          <div className="px-5">
+            <Carousel
+              swipeable={true}
+              draggable={true}
+              showDots={true}
+              responsive={responsive}
+              infinite={true}
+              autoPlay={true}
+              keyBoardControl={true}
+              customTransition="all .5"
+              transitionDuration={500}
+              containerClass="carousel-container"
+              removeArrowOnDeviceType={["tablet", "mobile"]}
+              dotListClass="custom-dot-list-style"
+              itemClass="carousel-item-padding-40-px "
+              arrows={false}
+            >
+              {testimonials.map((testimonial) => (
+                <div
+                  key={testimonial.id}
+                  className="p-10 flex flex-row justify-between gap-6 items-center shadow-lg border border-gray-50 bg-white  "
+                >
+                  <div className="mx-auto mb-4 h-20 w-64 md:h-24 md:w-48 rounded-full overflow-hidden">
+                    <Image
+                      width={500}
+                      height={500}
+                      objectFit="cover"
+                      src={testimonial.image}
+                      alt="testimonial"
+                      className="w-full h-full"
+                    />
+                  </div>
+                  <div>
+                    <div className="flex flex-col items-center text-justify">
+                      <p className="text-sm text-gray-800 md:pl-10 md:pr-10">
+                        {testimonial.quote}
+                      </p>
+                      <p className="text-sm font-semibold text-ui-primary-dark mt-2">
+                        {testimonial.name}
+                      </p>
+                      <p className="text-sm text-gray-800 mt-2">
+                        {testimonial.position}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </Carousel>
-        </div>
+              ))}
+            </Carousel>
+          </div>
         </div>
       </div>
     </>

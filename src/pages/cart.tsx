@@ -30,7 +30,7 @@ const Home = () => {
       ) : (
         <>
           <Navbar />
-          <Breadcrumb title="Shopping Cart" />
+          <Breadcrumb title="Shopping Cart"  href="cart"/>
           <ShoppingCart />
 
           <Footer />

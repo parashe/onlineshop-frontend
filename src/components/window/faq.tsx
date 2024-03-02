@@ -13,9 +13,9 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <section className="bg-white  mt-10">
-      <div className="container mx-auto">
-      <div className="md:mt-10 mb-10 pt-10 md:20px md:px-20 xl:px-32 shadow-sm bg-white ">
+    <section className="mt-5 ">
+      <div className="container mx-auto md:px-32 ">
+      <div className="p-5 md:p-10 shadow-xl   bg-white   ">
           <div className="text-left ml-2 relative mb-10">
             <div className="text-left ml-2 relative ">
             <h3 className="mx-auto lg:mx-0 uppercase text-ui-primary-dark lg:mb-5 text-md text-justify font-black">

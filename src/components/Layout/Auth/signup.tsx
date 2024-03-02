@@ -158,7 +158,7 @@ const SignUp = ({ onClose }: UserModalDetailsProps) => {
 
   // Return the JSX representing the SignUp form
   return (
-    <div className="relative bg-white rounded-lg shadow dark:bg-gray-700 w-[900px]">
+    <div className="relative bg-white rounded-lg shadow-lg dark:bg-gray-700 w-[900px] bg-opacity-[1]">
       <div className="flex items-center justify-between bg-gray-100 p-4 border-b rounded-t dark:border-gray-600">
         <h3 className="px-10 text-xl font-semibold text-gray-900 dark:text-white">
           Sign Up
@@ -187,8 +187,8 @@ const SignUp = ({ onClose }: UserModalDetailsProps) => {
         </button>
       </div>
 
-      <div className="container mx-auto p-12 pt-8 w-full pb-10 ">
-        <div className="max-w-[1000px] p-6 bg-white pb-10">
+      <div className="container mx-auto p-12  pt-8 w-full pb-10 ">
+        <div className="max-w-[1000px] p-6  pb-10 rounded-lg shadow dark:bg-gray-800 ">
           <form
             className="space-y-4 md:space-y-6"
             action="#"
@@ -231,6 +231,7 @@ const SignUp = ({ onClose }: UserModalDetailsProps) => {
                   label="Password"
                   placeholder="Enter your Password"
                   errorMessage={password_ErrorMsg}
+                  
                 />
               </div>
               <div className="w-full">

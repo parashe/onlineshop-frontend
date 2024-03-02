@@ -8,9 +8,9 @@ const ProductImage = ({ imageUrl }: { imageUrl: string | undefined }) => (
   <div>
     <a href="#">
       <Image
-        width={700}
+        width={500}
         height={700}
-        className="w-full h-full max-h-[400px] md:h-[200px] lg:aspect-[4/3] object-fit p-5 cursor-pointer bg-transparent  hover:scale-105 hover:border-blue-500 transition duration-300"
+        className="object-fit h-full bg-transparent p-10 aspect-[1/1] brightness-105 w-full    cursor-pointer   hover:scale-105 transition duration-300"
         src={Image_Url + imageUrl}
         alt="product image"
       />
@@ -66,7 +66,7 @@ const PriceSection = ({
       {discountPrice &&
         discountPrice !== "0" &&
         Number(fullPrice) !== Number(price) && (
-          <span className="text-md font-medium text-ui-red dark:text-gray-400 line-through line-through-blue-500">
+          <span className="text-xs font-small text-ui-red dark:text-gray-400 line-through line-through-blue-500">
             £{fullPrice}
           </span>
         )}
@@ -85,9 +85,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
     (Number(product.discountPrice) / 100) * Number(product.price) +
     Number(product.price);
   return (
-    <div className="w-full bg-white rounded-md  shadow-sm shadow-gray-200 hover:shadow-lg transition duration-300 cursor-pointer relative">
+    <div className="w-full mt-5 bg-white rounded-md  shadow-lg hover:scale-105 transition duration-300 relative">
       {product.productImages && product.productImages.length > 0 && (
-        <ProductImage imageUrl={product.productImages?.[0] || ""} />
+        <div className="h-60 aspect-[1/1] w-full bg-white">
+          <ProductImage imageUrl={product.productImages?.[0] || ""} />
+        </div>
       )}
 
       <div className="px-5 pb-5">
@@ -100,7 +102,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       </div>
 
       {Number(product.discountPrice) > 0 && (
-        <div className="absolute top-0 left-0 mt-0 ml-0">
+        <div className="absolute bottom-1/3 left-0 mt-0 ml-0">
           <span className="px-2 py-1 text-xs font-medium bg-ui-primary text-white  dark:text-ui-primary-dark">
             Save {product.discountPrice}%
           </span>
