@@ -115,12 +115,12 @@ const LoginPage = ({ onClose }: UserModalDetailsProps) => {
     <>
       <div className="fixed   top-0 left-0 flex justify-center items-center w-full h-full bg-black bg-opacity-50 z-50">
         {/* </div> <div className="fixed bg-black   w-full h-full inset-0 z-50 flex items-start justify-center overflow-y-auto bg-opacity-50"> */}
-        <div className="modal-content bg-white  w-full max-w-lg  max-h-[80vh] p-8 rounded-xl shadow-lg overflow-auto">
+        <div className="modal-content bg-black bg-opacity-80  w-full max-w-lg  max-h-[80vh] p-8 rounded-xl shadow-lg overflow-auto">
           <div className="flex items-center justify-between   md:border-none rounded-t dark:border-gray-600">
             <button
               type="button"
               onClick={onClose}
-              className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+              className="text-gray-400 bg-transparent  hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
             >
               <svg
                 className="w-3 h-3"
@@ -143,16 +143,12 @@ const LoginPage = ({ onClose }: UserModalDetailsProps) => {
             </button>
           </div>
           <div className="flex flex-col w-full items-center justify-center ">
-            <div className="w-full border-none bg-white md:border-2 md:border-gray-300 rounded-lg  dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+            <div className="w-full border-none bg-black bg-opacity-0 md:border-2 md:border-gray-300 rounded-lg  dark:border md:mt-0 sm:max-w-md xl:p-0">
               <div className="py-0">
                 <a href="#" className="flex justify-center">
                   <Image
-                    style={{
-                      height: "80px",
-                      width: "80px",
-                      objectFit: "contain",
-                    }}
-                    className="pt-0"
+                   
+                    className="p-2 rounded-full h-[100px] w-[100px] bg-gray-100 object-contain"
                     src="/images/logo.png"
                     width={200}
                     height={500}
@@ -161,9 +157,9 @@ const LoginPage = ({ onClose }: UserModalDetailsProps) => {
                 </a>
               </div>
 
-              <div className="pt-0 px-auto py-2 space-y-4 md:space-y-6  w-full ">
+              <div className="pt-2 px-auto py-2 space-y-4 md:space-y-6  w-full ">
                 <div className="flex justify-center h-[90%]">
-                  <h1 className="font-black  text-lg  justify-start  leading-relaxed  text-gray-900 ">
+                  <h1 className="font-black  text-lg  justify-start  leading-relaxed  text-white ">
                     Sign In To Continue
                   </h1>
                 </div>
@@ -181,6 +177,8 @@ const LoginPage = ({ onClose }: UserModalDetailsProps) => {
                       placeholder="email"
                       type="email"
                       errorMessage={formErrors.email}
+                      labelcolor="white"
+                      className="text-white bg-black"
                     />
                   </div>
                   <div>
@@ -192,6 +190,8 @@ const LoginPage = ({ onClose }: UserModalDetailsProps) => {
                       placeholder="Password"
                       type="password"
                       errorMessage={formErrors.password}
+                      className="text-white bg-black "
+                      labelcolor="white"
                     />
                   </div>
                   <div className="flex items-center justify-between">
@@ -208,7 +208,7 @@ const LoginPage = ({ onClose }: UserModalDetailsProps) => {
                       <div className="ml-3 text-sm">
                         <label
                           htmlFor="remember"
-                          className="text-gray-700 dark:text-gray-300"
+                          className="text-white dark:text-gray-300"
                         >
                           Remember me
                         </label>
@@ -217,7 +217,7 @@ const LoginPage = ({ onClose }: UserModalDetailsProps) => {
                     <a
                       onClick={() => setShowChangePassword(true)}
                       href="#"
-                      className="text-sm font-medium text-blue-500 hover:underline dark:text-primary-500"
+                      className="text-sm font-medium text-orange-500 hover:underline dark:text-primary-500"
                     >
                       Forgot password?
                     </a>
@@ -244,7 +244,7 @@ const LoginPage = ({ onClose }: UserModalDetailsProps) => {
                       </span>
                     )}
                   </Button>
-                  <p className="text-sm font-normal text-gray-700 dark:text-gray-400">
+                  <p className="text-sm font-normal text-white dark:text-gray-400">
                     Don’t have an account yet?{" "}
                     <a
                       onClick={() => setShowsinUp(true)}

@@ -44,6 +44,7 @@ interface InputProps {
   type: string;
   className?: string;
   required?: boolean;
+  labelcolor?:string;
 }
 
 export const Input: React.FC<InputProps> = ({
@@ -56,6 +57,7 @@ export const Input: React.FC<InputProps> = ({
   type,
   className,
   required,
+  labelcolor
 }) => {
   const defaultClassName =
     "w-full px-4 py-2 rounded-lg placeholder:text-gray-300 placeholder:text-xs shadow-sm focus:ring focus:ring-opacity-50 focus:ring-ui-primary border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-ui-primary";
@@ -67,7 +69,7 @@ export const Input: React.FC<InputProps> = ({
   return (
     <div className="mb-6">
       <label
-        className="block text-gray-900 text-sm font-bold mb-2"
+        className={`${labelcolor ? "text-" + labelcolor : "text-gray-900"} inline-block text-sm font-bold mb-2`}
         htmlFor="password"
       >
         {label} &nbsp;
