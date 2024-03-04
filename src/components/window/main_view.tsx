@@ -12,16 +12,25 @@ import { Spinner } from "../Layout/Atom/atom";
 import { Home } from "./home";
 
 export const Main_view = () => {
-  const [initialRender, setInitialRender] = useState(true);
+  const [showSpinnerMessage, setShowSpinnerMessage] = useState(false);
   const product = useDeferredValue(UseProduct());
 
   useEffect(() => {
-    setInitialRender(false); // Set initialRender to false after the first rendering
+   
+    localStorage.setItem("firstLoad", "true");
+
+  if(!localStorage.getItem("firstLoad")){
+    setShowSpinnerMessage(true);
+    setTimeout(() => {
+      setShowSpinnerMessage(false);
+    }, 1000);
+  }
+    
   }, []);
 
   let windowContent = <></>;
 
-  if (product.isLoading && initialRender) {
+  if (product.isLoading && showSpinnerMessage) {
     windowContent = (
       <div className="fixed top-0 left-0 w-screen h-screen flex justify-center items-center  bg-opacity-40 z-[100]">
         <Spinner
