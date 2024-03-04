@@ -26,7 +26,7 @@ export const Main_view = () => {
 
   let windowContent = <></>;
 
-  if (product.isLoading) {
+  if (product.isLoading && showSpinnerMessage) {
     windowContent = (
       <div className="fixed top-0 left-0 w-screen h-screen flex justify-center items-center  bg-opacity-40 z-[100]">
         <Spinner
