@@ -287,7 +287,9 @@ export const Spinner: React.FC<SpinnerProps> = ({
         </circle>
       </svg>
       <span className="sr-only">Loading...</span>{" "}
-      <span className="hidden md:block text-orange-500">{message}</span>
+      <span className="hidden md:block text-orange-500 font-serif text-sm uppercase tracking-wide">
+  {message}
+</span>
     </div>
 
   );

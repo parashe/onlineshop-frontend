@@ -16,21 +16,17 @@ export const Main_view = () => {
   const product = useDeferredValue(UseProduct());
 
   useEffect(() => {
-   
-    localStorage.setItem("firstLoad", "true");
+    const isFirstLoad = localStorage.getItem('firstLoad');
 
-  if(!localStorage.getItem("firstLoad")){
-    setShowSpinnerMessage(true);
-    setTimeout(() => {
-      setShowSpinnerMessage(false);
-    }, 1000);
-  }
-    
-  }, []);
+    if (!isFirstLoad) {
+      setShowSpinnerMessage(true);
+      localStorage.setItem('firstLoad', 'true');
+    }
+  }, []); 
 
   let windowContent = <></>;
 
-  if (product.isLoading && showSpinnerMessage) {
+  if (product.isLoading) {
     windowContent = (
       <div className="fixed top-0 left-0 w-screen h-screen flex justify-center items-center  bg-opacity-40 z-[100]">
         <Spinner
