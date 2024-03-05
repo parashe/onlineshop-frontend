@@ -16,13 +16,13 @@ export const Main_view = () => {
   const product = useDeferredValue(UseProduct());
 
   useEffect(() => {
-    const isFirstLoad = localStorage.getItem('firstLoad');
+    const isFirstLoad = localStorage.getItem("firstLoad");
 
     if (!isFirstLoad) {
       setShowSpinnerMessage(true);
-      localStorage.setItem('firstLoad', 'true');
+      localStorage.setItem("firstLoad", "true");
     }
-  }, []); 
+  }, []);
 
   let windowContent = <></>;
 
@@ -30,7 +30,7 @@ export const Main_view = () => {
     windowContent = (
       <div className="fixed top-0 left-0 w-screen h-screen flex justify-center items-center  bg-opacity-40 z-[100]">
         <Spinner
-          size={20}
+          size={48}
           color="text-light-400"
           message="Please wait for 50 sec in first loading because of low CPU usage"
         />
