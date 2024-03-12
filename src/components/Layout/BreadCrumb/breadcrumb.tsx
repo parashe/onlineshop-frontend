@@ -22,7 +22,7 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({ title, href }) => {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-60" />
       </div>
       <div className="absolute top-1/2 flex justify-center w-full">
-        <nav className="w-full bg-white opacity-70 shadow-lg shadow-orange-100 py-8 px-10 max-w-xl rounded-lg ">
+        <nav className="w-full bg-gray-100 opacity-70 shadow-xs shadow-orange-100 py-8 px-10 max-w-xl rounded-lg ">
           <ol className="flex items-center justify-center">
             <li className="inline-flex items-center">
               <div className="flex items-center">
